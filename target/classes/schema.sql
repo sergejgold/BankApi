@@ -1,0 +1,19 @@
+CREATE TABLE IF NOT EXISTS USERS (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    l_name VARCHAR(40),
+    f_name VARCHAR(20),
+    p_myc VARCHAR(40)
+    );
+CREATE TABLE IF NOT EXISTS ACCOUNTS (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    account_number LONG,
+    balance DECIMAL,
+    FOREIGN KEY (user_id) REFERENCES USERS(id) ON DELETE CASCADE
+    );
+CREATE TABLE IF NOT EXISTS CARDS (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    acc_id INT,
+    card_number VARCHAR(20),
+    FOREIGN KEY (acc_id) REFERENCES accounts(id) ON DELETE CASCADE
+    );

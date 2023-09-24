@@ -1,0 +1,26 @@
+POST http://localhost:8080/bank/new_card/1010020213908764432
+
+
+
+GET http://localhost:8080/bank/cards/1010020213908764432
+
+###
+PATCH http://localhost:8080/bank/deposit
+Content-Type: application/json
+
+{
+  "account_number": 1010020213908764563,
+  "sum": 500
+}
+
+###
+
+GET http://localhost:8080/bank/cards/1010020213908764432
+
+###
+GET http://localhost:8080/bank/account/1010020213908764563
+Accept: application/json
+
+###
+
+
